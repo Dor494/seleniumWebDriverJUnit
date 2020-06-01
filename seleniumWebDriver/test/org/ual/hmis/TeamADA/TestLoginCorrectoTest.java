@@ -12,7 +12,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.Dimension;
@@ -26,22 +25,24 @@ import org.openqa.selenium.Keys;
 import java.util.*;
 import java.net.MalformedURLException;
 import java.net.URL;
+
 public class TestLoginCorrectoTest {
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
+  
   @Before
   public void setUp() {
-	// System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
-	// System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
-	  FirefoxOptions firefoxOptions = new FirefoxOptions();
-	  firefoxOptions.setHeadless(true);
-	  driver = new FirefoxDriver();
-	  //ChromeOptions chromeOptions = new ChromeOptions();
-	  //chromeOptions.setHeadless(true);
-	  //driver = new ChromeDriver();
-	  js = (JavascriptExecutor) driver;
-	  vars = new HashMap<String, Object>();
+	  	// System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
+		// System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+	  	FirefoxOptions firefoxOptions = new FirefoxOptions();
+	  	firefoxOptions.setHeadless(true);
+	  	driver = new FirefoxDriver();
+	  	//ChromeOptions chromeOptions = new ChromeOptions();
+	  	//chromeOptions.setHeadless(true);
+	  	//driver = new ChromeDriver();
+	  	js = (JavascriptExecutor) driver;
+	  	vars = new HashMap<String, Object>();
   }
   @After
   public void tearDown() {
@@ -49,15 +50,29 @@ public class TestLoginCorrectoTest {
   }
   @Test
   public void testLoginCorrecto() {
-    driver.get("http://node-teamada.northeurope.cloudapp.azure.com:1337/login");
-    driver.manage().window().setSize(new Dimension(1382, 754));
-    driver.findElement(By.cssSelector(".form-group:nth-child(1) > .form-control")).click();
-    driver.findElement(By.cssSelector(".form-group:nth-child(1) > .form-control")).sendKeys("prueba@node.com");
-    driver.findElement(By.cssSelector(".form-group:nth-child(2) > .form-control")).click();
-    driver.findElement(By.cssSelector(".form-group:nth-child(2) > .form-control")).sendKeys("123456");
-    driver.findElement(By.cssSelector(".button-text")).click();
-    assertThat(driver.findElement(By.xpath("//div[@id=\'welcome\']/div/h1")).getText(), is("Welcome!"));
-    driver.findElement(By.id("header-account-menu-link")).click();
-    driver.findElement(By.linkText("Sign out")).click();
+	  try {
+		    driver.get("http://node-teamada.northeurope.cloudapp.azure.com:1337/login");
+		    Thread.sleep(1000);
+		    driver.findElement(By.cssSelector(".form-group:nth-child(1) > .form-control")).click();
+		    Thread.sleep(1000);
+		    driver.findElement(By.cssSelector(".form-group:nth-child(1) > .form-control")).sendKeys("prueba@node.com");
+		    Thread.sleep(1000);
+		    driver.findElement(By.cssSelector(".form-group:nth-child(2) > .form-control")).click();
+		    Thread.sleep(1000);
+		    driver.findElement(By.cssSelector(".form-group:nth-child(2) > .form-control")).sendKeys("123456");
+		    Thread.sleep(1000);
+		    driver.findElement(By.cssSelector(".button-text")).click();
+		    Thread.sleep(1000);
+		    driver.findElement(By.cssSelector(".container")).click();
+		    Thread.sleep(1000);
+		    assertThat(driver.findElement(By.cssSelector("h1")).getText(), is("Welcome!"));
+		    Thread.sleep(1000);
+		    driver.findElement(By.id("header-account-menu-link")).click();
+		    Thread.sleep(1000);
+		    driver.findElement(By.linkText("Sign out")).click();
+	      } catch (InterruptedException e) {
+	        e.printStackTrace();
+	      }
+    
   }
 }

@@ -32,15 +32,15 @@ public class TestLoginVacioTest {
   @Before
   public void setUp() {
 	// System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
-	// System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
-	  FirefoxOptions firefoxOptions = new FirefoxOptions();
-	  firefoxOptions.setHeadless(true);
-	  driver = new FirefoxDriver();
-	  //ChromeOptions chromeOptions = new ChromeOptions();
-	  //chromeOptions.setHeadless(true);
-	  //driver = new ChromeDriver();
-	  js = (JavascriptExecutor) driver;
-	  vars = new HashMap<String, Object>();
+		// System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+	  	FirefoxOptions firefoxOptions = new FirefoxOptions();
+	  	firefoxOptions.setHeadless(true);
+	  	driver = new FirefoxDriver();
+	  	//ChromeOptions chromeOptions = new ChromeOptions();
+	  	//chromeOptions.setHeadless(true);
+	  	//driver = new ChromeDriver();
+	  	js = (JavascriptExecutor) driver;
+	  	vars = new HashMap<String, Object>();
   }
   @After
   public void tearDown() {
@@ -48,9 +48,17 @@ public class TestLoginVacioTest {
   }
   @Test
   public void testLoginVacio() {
-    driver.get("http://node-teamada.northeurope.cloudapp.azure.com:1337/login");
-    driver.findElement(By.cssSelector(".button-text")).click();
-    assertThat(driver.findElement(By.cssSelector(".form-group:nth-child(1) > .invalid-feedback")).getText(), is("Please provide a valid email address."));
-    assertThat(driver.findElement(By.cssSelector(".form-group:nth-child(2) > .invalid-feedback")).getText(), is("Please enter your password."));
+	  try {
+		  driver.get("http://node-teamada.northeurope.cloudapp.azure.com:1337/login");
+		  Thread.sleep(1000);
+		    driver.findElement(By.cssSelector(".button-text")).click();
+		    Thread.sleep(1000);
+		    assertThat(driver.findElement(By.cssSelector(".form-group:nth-child(1) > .invalid-feedback")).getText(), is("Please provide a valid email address."));
+		    Thread.sleep(1000);
+		    assertThat(driver.findElement(By.cssSelector(".form-group:nth-child(2) > .invalid-feedback")).getText(), is("Please enter your password."));
+	      } catch (InterruptedException e) {
+	        e.printStackTrace();
+	      }
+    
   }
 }
