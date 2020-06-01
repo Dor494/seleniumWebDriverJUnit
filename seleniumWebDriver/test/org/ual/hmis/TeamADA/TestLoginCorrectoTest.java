@@ -33,7 +33,7 @@ public class TestLoginCorrectoTest {
   
   @Before
   public void setUp() {
-	  	//System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
+	  	System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
 		// System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
 	  	FirefoxOptions firefoxOptions = new FirefoxOptions();
 	  	firefoxOptions.setHeadless(true);
@@ -63,7 +63,9 @@ public class TestLoginCorrectoTest {
 		    Thread.sleep(1000);
 		    driver.findElement(By.cssSelector(".button-text")).click();
 		    Thread.sleep(1000);
-		    assertThat(driver.findElement(By.xpath("//h1[contains(.,\'Welcome!\')]")).getText(), is("Welcome!"));
+		    driver.findElement(By.cssSelector(".container")).click();
+		    Thread.sleep(1000);
+		    assertThat(driver.findElement(By.cssSelector("h1")).getText(), is("Welcome!"));
 		    Thread.sleep(1000);
 		    driver.findElement(By.id("header-account-menu-link")).click();
 		    Thread.sleep(1000);
