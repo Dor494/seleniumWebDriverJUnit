@@ -28,65 +28,100 @@ import java.util.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 public class TestregistrocorrectoTest {
-  private WebDriver driver;
+  private WebDriver driver1;
+  private WebDriver driver2;
   private Map<String, Object> vars;
-  JavascriptExecutor js;
-  @Category(Categories.Chrome.class)
+  JavascriptExecutor js1;
+  JavascriptExecutor js2;
+  
   @Before
-  public void setUpChrome() {
-	  	// System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
-		// System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
-	  	ChromeOptions chromeOptions = new ChromeOptions();
-	  	chromeOptions.setHeadless(true);
-	  	driver = new ChromeDriver();
-	  	js = (JavascriptExecutor) driver;
-	  	vars = new HashMap<String, Object>();
-  }
-  @Category(Categories.Firefox.class)
-  @Before
-  public void setUpFirefox() {
+  public void setUp() {
 	  	// System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
 		// System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
 	  	FirefoxOptions firefoxOptions = new FirefoxOptions();
 	  	firefoxOptions.setHeadless(true);
-	  	driver = new FirefoxDriver();
-	  	js = (JavascriptExecutor) driver;
+	  	driver1 = new FirefoxDriver();
+	  	ChromeOptions chromeOptions = new ChromeOptions();
+	  	chromeOptions.setHeadless(true);
+	  	driver2 = new ChromeDriver();
+	  	js1 = (JavascriptExecutor) driver1;
+	  	js2 = (JavascriptExecutor) driver2;
 	  	vars = new HashMap<String, Object>();
   }
+  
   @After
   public void tearDown() {
-    driver.quit();
+	  driver1.quit();
+	  driver2.quit();
   }
+  
+  @Category(Categories.Firefox.class)
   @Test
-  public void testregistrocorrecto() {
+  public void testregistrocorrectoFirefox() {
 	  try {
-	        driver.get("http://node-teamada.northeurope.cloudapp.azure.com:1337/");
+		  driver1.get("http://node-teamada.northeurope.cloudapp.azure.com:1337/");
 	        Thread.sleep(1000);
-	        driver.findElement(By.linkText("Sign up")).click();
+	        driver1.findElement(By.linkText("Sign up")).click();
 	        Thread.sleep(1000);
-	        vars.put("email", js.executeScript("return \"nombre-\" + Math.floor(Math.random()*1500000)+\"@correo.com\""));
+	        vars.put("email", js1.executeScript("return \"nombre-\" + Math.floor(Math.random()*1500000)+\"@correo.com\""));
 	        Thread.sleep(1000);
 	        System.out.println(vars.get("email").toString());
 	        Thread.sleep(1000);
-	        driver.findElement(By.id("full-name")).sendKeys("nombre");
+	        driver1.findElement(By.id("full-name")).sendKeys("nombre");
 	        Thread.sleep(1000);
-	        driver.findElement(By.id("email-address")).sendKeys(vars.get("email").toString());
+	        driver1.findElement(By.id("email-address")).sendKeys(vars.get("email").toString());
 	        Thread.sleep(1000);
-	        driver.findElement(By.id("password")).sendKeys("1234");
+	        driver1.findElement(By.id("password")).sendKeys("1234");
 	        Thread.sleep(1000);
-	        driver.findElement(By.id("confirm-password")).sendKeys("1234");
+	        driver1.findElement(By.id("confirm-password")).sendKeys("1234");
 	        Thread.sleep(1000);
-	        driver.findElement(By.id("terms-agreement")).click();
+	        driver1.findElement(By.id("terms-agreement")).click();
 	        Thread.sleep(1000);
-	        driver.findElement(By.cssSelector(".ajax-button")).click();
+	        driver1.findElement(By.cssSelector(".ajax-button")).click();
 	        Thread.sleep(1000);
-	        driver.findElement(By.cssSelector(".container")).click();
+	        driver1.findElement(By.cssSelector(".container")).click();
 	        Thread.sleep(1000);
-            assertThat(driver.findElement(By.cssSelector("h1")).getText(), is("Welcome!"));
+            assertThat(driver1.findElement(By.cssSelector("h1")).getText(), is("Welcome!"));
 	        Thread.sleep(1000);
-	        driver.findElement(By.id("header-account-menu-link")).click();
+	        driver1.findElement(By.id("header-account-menu-link")).click();
 	        Thread.sleep(1000);
-	        driver.findElement(By.linkText("Sign out")).click();
+	        driver1.findElement(By.linkText("Sign out")).click();
+	      } catch (InterruptedException e) {
+	        e.printStackTrace();
+	      }
+  }
+  
+  @Category(Categories.Chrome.class)
+  @Test
+  public void testregistrocorrectoChrome() {
+	  try {
+		  driver2.get("http://node-teamada.northeurope.cloudapp.azure.com:1337/");
+	        Thread.sleep(1000);
+	        driver2.findElement(By.linkText("Sign up")).click();
+	        Thread.sleep(1000);
+	        vars.put("email", js2.executeScript("return \"nombre-\" + Math.floor(Math.random()*1500000)+\"@correo.com\""));
+	        Thread.sleep(1000);
+	        System.out.println(vars.get("email").toString());
+	        Thread.sleep(1000);
+	        driver2.findElement(By.id("full-name")).sendKeys("nombre");
+	        Thread.sleep(1000);
+	        driver2.findElement(By.id("email-address")).sendKeys(vars.get("email").toString());
+	        Thread.sleep(1000);
+	        driver2.findElement(By.id("password")).sendKeys("1234");
+	        Thread.sleep(1000);
+	        driver2.findElement(By.id("confirm-password")).sendKeys("1234");
+	        Thread.sleep(1000);
+	        driver2.findElement(By.id("terms-agreement")).click();
+	        Thread.sleep(1000);
+	        driver2.findElement(By.cssSelector(".ajax-button")).click();
+	        Thread.sleep(1000);
+	        driver2.findElement(By.cssSelector(".container")).click();
+	        Thread.sleep(1000);
+            assertThat(driver2.findElement(By.cssSelector("h1")).getText(), is("Welcome!"));
+	        Thread.sleep(1000);
+	        driver2.findElement(By.id("header-account-menu-link")).click();
+	        Thread.sleep(1000);
+	        driver2.findElement(By.linkText("Sign out")).click();
 	      } catch (InterruptedException e) {
 	        e.printStackTrace();
 	      }
