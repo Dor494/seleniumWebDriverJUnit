@@ -1,5 +1,4 @@
 pipeline {
-master
     agent any
     environment {
         DRIVERS_LOC = "/var/lib/jenkins/selenium-drivers/"
