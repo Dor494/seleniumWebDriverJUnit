@@ -3,10 +3,6 @@ pipeline {
     environment {
         DRIVERS_LOC = "/var/lib/jenkins/selenium-drivers/"
     }
-    tools {
-        // Usa aquí el nombre de tu instalación de Maven en Jenkins Tools
-        maven 3.3.3
-    }
     stages {
         stage('Git clone') {
             steps{
