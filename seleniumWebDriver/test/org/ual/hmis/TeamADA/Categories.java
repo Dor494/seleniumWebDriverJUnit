@@ -2,11 +2,11 @@ package org.ual.hmis.TeamADA;
 
 public interface Categories {
 
-	public class Firefox {
+	interface Firefox {
 
 	}
 
-	public class Chrome {
+	interface Chrome {
 
 	}
 
