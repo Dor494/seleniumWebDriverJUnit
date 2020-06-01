@@ -5,7 +5,7 @@ pipeline {
     }
     tools {
         // Usa aquí el nombre de tu instalación de Maven en Jenkins Tools
-        maven "3.6"
+        maven "Default Maven"
     }
     stages {
         stage('Git clone') {
