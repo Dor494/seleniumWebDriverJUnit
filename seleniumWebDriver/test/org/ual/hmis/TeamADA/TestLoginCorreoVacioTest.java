@@ -31,16 +31,16 @@ public class TestLoginCorreoVacioTest {
   JavascriptExecutor js;
   @Before
   public void setUp() {
-	// System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
-	// System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
-	  FirefoxOptions firefoxOptions = new FirefoxOptions();
-	  firefoxOptions.setHeadless(true);
-	  driver = new FirefoxDriver();
-	  //ChromeOptions chromeOptions = new ChromeOptions();
-	  //chromeOptions.setHeadless(true);
-	  //driver = new ChromeDriver();
-	  js = (JavascriptExecutor) driver;
-	  vars = new HashMap<String, Object>();
+	  System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
+		// System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+	  	FirefoxOptions firefoxOptions = new FirefoxOptions();
+	  	firefoxOptions.setHeadless(true);
+	  	driver = new FirefoxDriver();
+	  	//ChromeOptions chromeOptions = new ChromeOptions();
+	  	//chromeOptions.setHeadless(true);
+	  	//driver = new ChromeDriver();
+	  	js = (JavascriptExecutor) driver;
+	  	vars = new HashMap<String, Object>();
   }
   @After
   public void tearDown() {
@@ -48,10 +48,18 @@ public class TestLoginCorreoVacioTest {
   }
   @Test
   public void testLoginCorreoVacio() {
-    driver.get("http://node-teamada.northeurope.cloudapp.azure.com:1337/login");
-    driver.findElement(By.cssSelector(".form-group:nth-child(2) > .form-control")).click();
-    driver.findElement(By.cssSelector(".form-group:nth-child(2) > .form-control")).sendKeys("123456");
-    driver.findElement(By.cssSelector(".ajax-button")).click();
-    assertThat(driver.findElement(By.cssSelector(".invalid-feedback")).getText(), is("Please provide a valid email address."));
+	  try {
+		  	driver.get("http://node-teamada.northeurope.cloudapp.azure.com:1337/login");
+		  	Thread.sleep(1000);
+		    driver.findElement(By.cssSelector(".form-group:nth-child(2) > .form-control")).click();
+		    Thread.sleep(1000);
+		    driver.findElement(By.cssSelector(".form-group:nth-child(2) > .form-control")).sendKeys("123456");
+		    Thread.sleep(1000);
+		    driver.findElement(By.cssSelector(".ajax-button")).click();
+		    Thread.sleep(1000);
+		    assertThat(driver.findElement(By.cssSelector(".invalid-feedback")).getText(), is("Please provide a valid email address."));
+	      } catch (InterruptedException e) {
+	        e.printStackTrace();
+	      }
   }
 }
