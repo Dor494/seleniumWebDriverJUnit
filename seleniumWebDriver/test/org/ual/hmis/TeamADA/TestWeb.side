@@ -1,0 +1,720 @@
+{
+  "id": "a481cf20-b505-445c-aec2-3dffa6f94526",
+  "version": "2.0",
+  "name": "TestWeb",
+  "url": "http://node-teamada.northeurope.cloudapp.azure.com:1337/account",
+  "tests": [{
+    "id": "9424dbe7-8cd9-4f4d-846f-9ec1e3a5349a",
+    "name": "CambioContrasena",
+    "commands": [{
+      "id": "75429cd9-3420-4fcd-a073-59fa882fd85b",
+      "comment": "",
+      "command": "open",
+      "target": "http://node-teamada.northeurope.cloudapp.azure.com:1337/account",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0fc5206a-9d40-4d5c-a9e4-7e8f23e774bf",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1094x947",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "093c8630-87d6-4f30-a263-84d8a289a638",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Change password",
+      "targets": [
+        ["linkText=Change password", "linkText"],
+        ["css=.row:nth-child(7) .btn", "css:finder"],
+        ["xpath=//a[contains(text(),'Change password')]", "xpath:link"],
+        ["xpath=//div[@id='account-overview']/div/div[4]/div[2]/span/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/account/password')]", "xpath:href"],
+        ["xpath=//div[4]/div[2]/span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Change password')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3a8ba75f-55da-4ebf-9c03-061273fed377",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='edit-password']/div/form/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "1234"
+    }, {
+      "id": "560c5d00-2775-47f2-b3d2-f6272fd27c43",
+      "comment": "",
+      "command": "type",
+      "target": "id=confirm-password",
+      "targets": [
+        ["id=confirm-password", "id"],
+        ["name=confirm-password", "name"],
+        ["css=#confirm-password", "css:finder"],
+        ["xpath=//input[@id='confirm-password']", "xpath:attributes"],
+        ["xpath=//div[@id='edit-password']/div/form/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "1234"
+    }, {
+      "id": "ca128c26-2e1c-4ddc-9e92-47ae62f5722f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button-text",
+      "targets": [
+        ["css=.button-text", "css:finder"],
+        ["xpath=//div[@id='edit-password']/div/form/div[2]/div[2]/div/button/span", "xpath:idRelative"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Save changes')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a23cf75a-6416-4065-963f-031377e7593f",
+      "comment": "",
+      "command": "click",
+      "target": "id=header-account-menu-link",
+      "targets": [
+        ["id=header-account-menu-link", "id"],
+        ["linkText=Account", "linkText"],
+        ["css=#header-account-menu-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Account')]", "xpath:link"],
+        ["xpath=//a[@id='header-account-menu-link']", "xpath:attributes"],
+        ["xpath=//header[@id='page-header']/div/div/a", "xpath:idRelative"],
+        ["xpath=//div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Account')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "01c19b3c-f834-4a5f-8e9e-ff8915689067",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Sign out",
+      "targets": [
+        ["linkText=Sign out", "linkText"],
+        ["css=.dropdown-item:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Sign out')]", "xpath:link"],
+        ["xpath=//header[@id='page-header']/div/div/div/a[2]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/logout')]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Sign out')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3143e8a4-fd1a-449e-93a7-96c09ffcc0f8",
+      "comment": "",
+      "command": "type",
+      "target": "css=.form-group:nth-child(1) > .form-control",
+      "targets": [
+        ["css=.form-group:nth-child(1) > .form-control", "css:finder"],
+        ["xpath=//input[@type='email']", "xpath:attributes"],
+        ["xpath=//div[@id='login']/div/div/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "alejomaf4@gmail.com"
+    }, {
+      "id": "95b8c5e9-7667-47b2-8ba2-f82567a60c79",
+      "comment": "",
+      "command": "type",
+      "target": "css=.form-group:nth-child(2) > .form-control",
+      "targets": [
+        ["css=.form-group:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@type='password']", "xpath:attributes"],
+        ["xpath=//div[@id='login']/div/div/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "1234"
+    }, {
+      "id": "b8cd52f9-7777-451a-a833-698e72e79754",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "css=.form-group:nth-child(2) > .form-control",
+      "targets": [
+        ["css=.form-group:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@type='password']", "xpath:attributes"],
+        ["xpath=//div[@id='login']/div/div/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "77cf150d-e402-479d-84c9-a78a35c38335",
+      "comment": "",
+      "command": "click",
+      "target": "id=header-account-menu-link",
+      "targets": [
+        ["id=header-account-menu-link", "id"],
+        ["linkText=Account", "linkText"],
+        ["css=#header-account-menu-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Account')]", "xpath:link"],
+        ["xpath=//a[@id='header-account-menu-link']", "xpath:attributes"],
+        ["xpath=//header[@id='page-header']/div/div/a", "xpath:idRelative"],
+        ["xpath=//div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Account')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "65132973-569f-429e-b919-883710f90275",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Settings",
+      "targets": [
+        ["linkText=Settings", "linkText"],
+        ["css=.dropdown-item:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Settings')]", "xpath:link"],
+        ["xpath=//header[@id='page-header']/div/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/account')]", "xpath:href"],
+        ["xpath=//div/div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Settings')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "12aec0f4-9f18-4e45-a72b-1fd6217ff16a",
+    "name": "EditarPerfil",
+    "commands": [{
+      "id": "3f460237-27c1-48bd-978b-42806b066a85",
+      "comment": "",
+      "command": "open",
+      "target": "http://node-teamada.northeurope.cloudapp.azure.com:1337/account",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "10b78d61-d491-4eac-aad6-3b66d4d92c58",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1094x947",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d5ead751-17c1-46ea-bed1-e5f9d494ccc6",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Edit profile",
+      "targets": [
+        ["linkText=Edit profile", "linkText"],
+        ["css=.row:nth-child(3) .btn", "css:finder"],
+        ["xpath=//a[contains(text(),'Edit profile')]", "xpath:link"],
+        ["xpath=//div[@id='account-overview']/div/div/div[2]/span/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/account/profile')]", "xpath:href"],
+        ["xpath=//span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Edit profile')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b2efa398-ac65-488b-a2c2-a544332c4a65",
+      "comment": "",
+      "command": "type",
+      "target": "id=full-name",
+      "targets": [
+        ["id=full-name", "id"],
+        ["name=full-name", "name"],
+        ["css=#full-name", "css:finder"],
+        ["xpath=//input[@id='full-name']", "xpath:attributes"],
+        ["xpath=//div[@id='edit-profile']/div/form/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Alejo"
+    }, {
+      "id": "4a22510d-90fe-4127-b8c1-586eec3882d4",
+      "comment": "",
+      "command": "type",
+      "target": "id=email-address",
+      "targets": [
+        ["id=email-address", "id"],
+        ["name=email-address", "name"],
+        ["css=#email-address", "css:finder"],
+        ["xpath=//input[@id='email-address']", "xpath:attributes"],
+        ["xpath=//div[@id='edit-profile']/div/form/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "alejomaf4@gmail.com"
+    }, {
+      "id": "ccfa6a7c-8dc2-471e-882b-e89fcf758b6c",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=email-address",
+      "targets": [
+        ["id=email-address", "id"],
+        ["name=email-address", "name"],
+        ["css=#email-address", "css:finder"],
+        ["xpath=//input[@id='email-address']", "xpath:attributes"],
+        ["xpath=//div[@id='edit-profile']/div/form/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "4c349f51-ebe5-4b2c-99b5-31d43a374795",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.row:nth-child(4) strong",
+      "targets": [
+        ["css=.row:nth-child(4) strong", "css:finder"],
+        ["xpath=//div[@id='account-overview']/div/div[2]/div[2]/strong", "xpath:idRelative"],
+        ["xpath=//strong", "xpath:position"],
+        ["xpath=//strong[contains(.,'Alejo')]", "xpath:innerText"]
+      ],
+      "value": "Alejo"
+    }, {
+      "id": "e72df5ce-5689-4c21-8e93-51938a02b5fb",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.row:nth-child(5) strong",
+      "targets": [
+        ["css=.row:nth-child(5) strong", "css:finder"],
+        ["xpath=//div[@id='account-overview']/div/div[3]/div[2]/strong", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/strong", "xpath:position"],
+        ["xpath=//strong[contains(.,'alejomaf4@gmail.com')]", "xpath:innerText"]
+      ],
+      "value": "alejomaf4@gmail.com"
+    }]
+  }, {
+    "id": "ec4c4e53-bbdc-4249-8520-2189a334f478",
+    "name": "CambioContrasenaIncorrecto",
+    "commands": [{
+      "id": "8b2c9ab0-1e3f-4c4d-8971-60997a493765",
+      "comment": "",
+      "command": "open",
+      "target": "http://node-teamada.northeurope.cloudapp.azure.com:1337/account",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "35220634-5b38-4df3-96da-999d8393b708",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1094x947",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2bf58895-709d-4bb4-bb14-74d9dab6c01e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Change password",
+      "targets": [
+        ["linkText=Change password", "linkText"],
+        ["css=.row:nth-child(7) .btn", "css:finder"],
+        ["xpath=//a[contains(text(),'Change password')]", "xpath:link"],
+        ["xpath=//div[@id='account-overview']/div/div[4]/div[2]/span/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/account/password')]", "xpath:href"],
+        ["xpath=//div[4]/div[2]/span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Change password')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "91ccb0a8-1013-450b-bdba-5cb35e45e30e",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='edit-password']/div/form/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "1234"
+    }, {
+      "id": "06ada50b-18f3-43ed-bdda-53448e6556bd",
+      "comment": "",
+      "command": "type",
+      "target": "id=confirm-password",
+      "targets": [
+        ["id=confirm-password", "id"],
+        ["name=confirm-password", "name"],
+        ["css=#confirm-password", "css:finder"],
+        ["xpath=//input[@id='confirm-password']", "xpath:attributes"],
+        ["xpath=//div[@id='edit-password']/div/form/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "12345"
+    }, {
+      "id": "acd5ea94-dd4a-47e2-b8c1-dcd501039fac",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ajax-button",
+      "targets": [
+        ["css=.ajax-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='edit-password']/div/form/div[2]/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Save changes')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1a7531f0-1f0d-43d5-8c9e-ef5acbe53a47",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.invalid-feedback",
+      "targets": [
+        ["css=.invalid-feedback", "css:finder"],
+        ["xpath=//div[@id='edit-password']/div/form/div/div[2]/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div", "xpath:position"]
+      ],
+      "value": "Your new password and confirmation do not match."
+    }]
+  }, {
+    "id": "6e12e80a-742c-4f50-b413-65d112216448",
+    "name": "EditarPerfilCorreoMal",
+    "commands": [{
+      "id": "36216189-99e5-40af-b31d-b149f5b83e7c",
+      "comment": "",
+      "command": "open",
+      "target": "http://node-teamada.northeurope.cloudapp.azure.com:1337/account",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e54895fd-e33c-4a75-8991-93a2fe81f50f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1094x947",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2b32d4fb-87f3-4c54-b348-1c86d3ae9230",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Edit profile",
+      "targets": [
+        ["linkText=Edit profile", "linkText"],
+        ["css=.row:nth-child(3) .btn", "css:finder"],
+        ["xpath=//a[contains(text(),'Edit profile')]", "xpath:link"],
+        ["xpath=//div[@id='account-overview']/div/div/div[2]/span/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/account/profile')]", "xpath:href"],
+        ["xpath=//span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Edit profile')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0766272a-c9d0-4c72-9047-9c7c16db46ed",
+      "comment": "",
+      "command": "type",
+      "target": "id=email-address",
+      "targets": [
+        ["id=email-address", "id"],
+        ["name=email-address", "name"],
+        ["css=#email-address", "css:finder"],
+        ["xpath=//input[@id='email-address']", "xpath:attributes"],
+        ["xpath=//div[@id='edit-profile']/div/form/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "alejomaf"
+    }, {
+      "id": "c2fce2ea-8c89-4923-93ac-f19e567b4112",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button-text",
+      "targets": [
+        ["css=.button-text", "css:finder"],
+        ["xpath=//div[@id='edit-profile']/div/form/div[2]/div[2]/div/button/span", "xpath:idRelative"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Save changes')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4f5fec64-d45c-4f06-b8a9-a06d04bd9b8e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ajax-button",
+      "targets": [
+        ["css=.ajax-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='edit-profile']/div/form/div[2]/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Save changes')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "e64057f9-0679-48a6-bb99-2180d4cde390",
+    "name": "EditarPerfilNombreLargo",
+    "commands": [{
+      "id": "c5a804d2-9aef-445d-b128-3e71d00cf5ae",
+      "comment": "",
+      "command": "open",
+      "target": "http://node-teamada.northeurope.cloudapp.azure.com:1337/account",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "117cff2f-1f97-4e4e-8bff-f3b77b82507a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1094x947",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a0c337ac-bcc8-4e7b-a573-ca44919ab6de",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Edit profile",
+      "targets": [
+        ["linkText=Edit profile", "linkText"],
+        ["css=.row:nth-child(3) .btn", "css:finder"],
+        ["xpath=//a[contains(text(),'Edit profile')]", "xpath:link"],
+        ["xpath=//div[@id='account-overview']/div/div/div[2]/span/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/account/profile')]", "xpath:href"],
+        ["xpath=//span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Edit profile')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d0f514df-c70a-4470-b4d0-a929fade7276",
+      "comment": "",
+      "command": "type",
+      "target": "id=full-name",
+      "targets": [
+        ["id=full-name", "id"],
+        ["name=full-name", "name"],
+        ["css=#full-name", "css:finder"],
+        ["xpath=//input[@id='full-name']", "xpath:attributes"],
+        ["xpath=//div[@id='edit-profile']/div/form/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+    }, {
+      "id": "96889561-34eb-4e2c-9266-354b2c871cb1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button-text",
+      "targets": [
+        ["css=.button-text", "css:finder"],
+        ["xpath=//div[@id='edit-profile']/div/form/div[2]/div[2]/div/button/span", "xpath:idRelative"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Save changes')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b7df0579-8a4f-4bc6-84f1-ba65bded7ef1",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.text-danger",
+      "targets": [
+        ["css=.text-danger", "css:finder"],
+        ["xpath=//div[@id='edit-profile']/div/form/div[2]/div/p", "xpath:idRelative"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'An error occured while processing your request. Please check your information and try again, or contact support if the error persists.')]", "xpath:innerText"]
+      ],
+      "value": "An error occured while processing your request. Please check your information and try again, or contact support if the error persists."
+    }]
+  }, {
+    "id": "fba414f9-f791-4436-ad5f-8f1d38c5642d",
+    "name": "CambioContrasenaLargo",
+    "commands": [{
+      "id": "795bea2b-3bd8-4ef4-b4e7-d364c2de7e64",
+      "comment": "",
+      "command": "open",
+      "target": "http://node-teamada.northeurope.cloudapp.azure.com:1337/account",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7b8f71c0-cf00-4095-9f9d-a7febcd4a497",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1094x947",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f8f203c1-8234-43b8-a5ba-768e3dcf4754",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Change password",
+      "targets": [
+        ["linkText=Change password", "linkText"],
+        ["css=.row:nth-child(7) .btn", "css:finder"],
+        ["xpath=//a[contains(text(),'Change password')]", "xpath:link"],
+        ["xpath=//div[@id='account-overview']/div/div[4]/div[2]/span/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/account/password')]", "xpath:href"],
+        ["xpath=//div[4]/div[2]/span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Change password')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e3c4ca05-83ee-4e64-a0d1-f002ac7201bb",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='edit-password']/div/form/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+    }, {
+      "id": "5ccf290c-044c-4885-997d-07792f1924f9",
+      "comment": "",
+      "command": "type",
+      "target": "id=confirm-password",
+      "targets": [
+        ["id=confirm-password", "id"],
+        ["name=confirm-password", "name"],
+        ["css=#confirm-password", "css:finder"],
+        ["xpath=//input[@id='confirm-password']", "xpath:attributes"],
+        ["xpath=//div[@id='edit-password']/div/form/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+    }, {
+      "id": "a96ed3e5-7837-41dc-baa5-3e5a3dee3035",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button-text",
+      "targets": [
+        ["css=.button-text", "css:finder"],
+        ["xpath=//div[@id='edit-password']/div/form/div[2]/div[2]/div/button/span", "xpath:idRelative"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Save changes')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b94a8f29-dad9-4b32-a786-09e241a6c0af",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.row:nth-child(8) strong",
+      "targets": [
+        ["css=.row:nth-child(8) strong", "css:finder"],
+        ["xpath=//div[@id='account-overview']/div/div[5]/div[2]/strong", "xpath:idRelative"],
+        ["xpath=//div[5]/div[2]/strong", "xpath:position"],
+        ["xpath=//strong[contains(.,'••••••••••')]", "xpath:innerText"]
+      ],
+      "value": "••••••••••"
+    }]
+  }, {
+    "id": "bc8eb1a2-fee3-4578-aac1-a82c0ac74277",
+    "name": "CambioContrasenaCancelar",
+    "commands": [{
+      "id": "a938e85e-a030-470f-ac30-fdc0e6174675",
+      "comment": "",
+      "command": "open",
+      "target": "http://node-teamada.northeurope.cloudapp.azure.com:1337/account",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0e93a616-183b-409f-923a-db6a5f86a4f7",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1094x947",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "063a3f70-121b-4173-834f-1f38b15910ec",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Change password",
+      "targets": [
+        ["linkText=Change password", "linkText"],
+        ["css=.row:nth-child(7) .btn", "css:finder"],
+        ["xpath=//a[contains(text(),'Change password')]", "xpath:link"],
+        ["xpath=//div[@id='account-overview']/div/div[4]/div[2]/span/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/account/password')]", "xpath:href"],
+        ["xpath=//div[4]/div[2]/span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Change password')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b9a40a03-1e6a-4df1-868d-18a3daf62476",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Cancel",
+      "targets": [
+        ["linkText=Cancel", "linkText"],
+        ["css=.btn-outline-info", "css:finder"],
+        ["xpath=//a[contains(text(),'Cancel')]", "xpath:link"],
+        ["xpath=//div[@id='edit-password']/div/form/div[2]/div[2]/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/account')])[3]", "xpath:href"],
+        ["xpath=//div[2]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Cancel')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b5450276-ac73-484a-bbcb-047f5c167fda",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//div[@id='account-overview']/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'My account')]", "xpath:innerText"]
+      ],
+      "value": "My account"
+    }]
+  }, {
+    "id": "d0d9ca73-a2f3-4bc2-894c-e03a351be097",
+    "name": "EditarPerfilCancelar",
+    "commands": [{
+      "id": "0ebfb49c-bb74-4720-80d5-bdfdfe3c1f50",
+      "comment": "",
+      "command": "open",
+      "target": "http://node-teamada.northeurope.cloudapp.azure.com:1337/account",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c37c2f2b-3ca5-487b-af4d-e4b1106e167a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1094x947",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "31e19cbf-39a6-4b49-943b-42900e2efc3a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Edit profile",
+      "targets": [
+        ["linkText=Edit profile", "linkText"],
+        ["css=.row:nth-child(3) .btn", "css:finder"],
+        ["xpath=//a[contains(text(),'Edit profile')]", "xpath:link"],
+        ["xpath=//div[@id='account-overview']/div/div/div[2]/span/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/account/profile')]", "xpath:href"],
+        ["xpath=//span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Edit profile')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2211309f-e405-4ec4-83af-14847ab79a02",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Cancel",
+      "targets": [
+        ["linkText=Cancel", "linkText"],
+        ["css=.btn-outline-info", "css:finder"],
+        ["xpath=//a[contains(text(),'Cancel')]", "xpath:link"],
+        ["xpath=//div[@id='edit-profile']/div/form/div[2]/div[2]/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/account')])[3]", "xpath:href"],
+        ["xpath=//div[2]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Cancel')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0390825f-8b4a-4599-bb86-5e58841dc06a",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//div[@id='account-overview']/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'My account')]", "xpath:innerText"]
+      ],
+      "value": "My account"
+    }]
+  }],
+  "suites": [{
+    "id": "2cf6b8fa-12d3-4208-9bcc-87dbc77474c7",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["9424dbe7-8cd9-4f4d-846f-9ec1e3a5349a"]
+  }],
+  "urls": ["http://node-teamada.northeurope.cloudapp.azure.com:1337/", "http://node-teamada.northeurope.cloudapp.azure.com:1337/account"],
+  "plugins": []
+}
