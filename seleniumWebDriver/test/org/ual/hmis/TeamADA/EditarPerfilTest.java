@@ -31,13 +31,17 @@ public class EditarPerfilTest {
   JavascriptExecutor js;
   @Before
   public void setUp() {
-	  System.setProperty("webdriver.gecko.driver", "drivers/geckodriver");
-	  FirefoxOptions firefoxOptions = new FirefoxOptions();
-	  firefoxOptions.setHeadless(true);
-	  driver = new FirefoxDriver();
-	  js = (JavascriptExecutor) driver;
-	  vars = new HashMap<String, Object>();
-  }
+	//System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
+	//System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+	FirefoxOptions firefoxOptions = new FirefoxOptions();
+	firefoxOptions.setHeadless(true);
+	driver = new FirefoxDriver();
+	//ChromeOptions chromeOptions = new ChromeOptions();
+	//chromeOptions.setHeadless(true);
+	//driver = new ChromeDriver();
+	js = (JavascriptExecutor) driver;
+	vars = new HashMap<String, Object>();
+}
   @After
   public void tearDown() {
     driver.quit();
