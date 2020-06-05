@@ -64,9 +64,9 @@ public class CambioContrasenaCancelarTest {
     Thread.sleep(1000);
     driver.manage().window().setSize(new Dimension(1094, 947));
     Thread.sleep(1000);
-    driver.findElement(By.linkText("Change password")).click();
+    driver.get("http://node-teamada.northeurope.cloudapp.azure.com:1337/account/password");
     Thread.sleep(1000);
-    driver.findElement(By.linkText("Cancel")).click();
+    driver.get("http://node-teamada.northeurope.cloudapp.azure.com:1337/account");
     Thread.sleep(1000);
     assertThat(driver.findElement(By.cssSelector("h1")).getText(), is("My account"));
     Thread.sleep(1000);

@@ -64,7 +64,7 @@ public class CambioContrasenaTest {
     Thread.sleep(1000);
     driver.manage().window().setSize(new Dimension(1094, 947));
     Thread.sleep(1000);
-    driver.findElement(By.linkText("Change password")).click();
+    driver.get("http://node-teamada.northeurope.cloudapp.azure.com:1337/account/password");
     Thread.sleep(1000);
     driver.findElement(By.id("password")).sendKeys("1234");
     Thread.sleep(1000);
@@ -85,8 +85,6 @@ public class CambioContrasenaTest {
     driver.findElement(By.id("header-account-menu-link")).click();
     Thread.sleep(1000);
     driver.get("http://node-teamada.northeurope.cloudapp.azure.com:1337/account");
-    Thread.sleep(1000);
-    driver.findElement(By.linkText("Edit profile")).click();
 	} catch (InterruptedException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
