@@ -64,7 +64,7 @@ public class CambioContrasenaIncorrectoTest {
     Thread.sleep(1000);
     driver.manage().window().setSize(new Dimension(1094, 947));
     Thread.sleep(1000);
-    driver.findElement(By.linkText("Change password")).click();
+    driver.get("http://node-teamada.northeurope.cloudapp.azure.com:1337/account/password");
     Thread.sleep(1000);
     driver.findElement(By.id("password")).sendKeys("1234");
     Thread.sleep(1000);

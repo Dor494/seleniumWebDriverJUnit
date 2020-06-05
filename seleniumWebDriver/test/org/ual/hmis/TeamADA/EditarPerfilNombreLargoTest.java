@@ -63,7 +63,7 @@ public class EditarPerfilNombreLargoTest {
     driver.get("http://node-teamada.northeurope.cloudapp.azure.com:1337/account");
     driver.manage().window().setSize(new Dimension(1094, 947));
     Thread.sleep(1000);
-    driver.findElement(By.linkText("Edit profile")).click();
+    driver.get("http://node-teamada.northeurope.cloudapp.azure.com:1337/account/profile");
     Thread.sleep(1000);
     driver.findElement(By.id("full-name")).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.BACK_SPACE));
     Thread.sleep(1000);
